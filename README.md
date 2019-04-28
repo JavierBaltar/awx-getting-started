@@ -5,6 +5,7 @@
   <a href="#Roles">Roles</a> •
   <a href="#Getting-Started">Getting Started</a> •
   <a href="#Tower-CLI">Tower CLI</a> •
+  <a href="#API">API</a> •
   <a href="#Notifications">Notifications</a> •
   <a href="#Docker-Security">Docker Security</a> •
   <a href="#related">Related</a> •
@@ -23,10 +24,10 @@ To run an Ansible Playbook with AWX, you need to configure the following items
 Tower-cli is a command line tool for Ansible AWX. It can also be used as a client library for other python apps, or as a reference for others developing API interactions with Tower’s REST API.
 - https://docs.ansible.com/ansible-tower/latest/html/towerapi/tower_cli.html 
 
-#### List users.
+#### List users
 `tower-cli user list`
 #### Create a new user
-`tower-cli user create --username=javierbaltar --first-name=Javier --last-name=Baltar --email=username@domain.com`
+`tower-cli user create --username=javierbaltar --first-name=Javier --last-name=Baltar --email=javierbaltar@mydomain.com`
 
 #### Launch a job
 `tower-cli job launch — job-template=id`
@@ -45,6 +46,32 @@ Tower-cli is a command line tool for Ansible AWX. It can also be used as a clien
 
 #### Copy all assets from one instance to another
 `tower-cli receive — tower-host awx.lab.com — all | tower-cli send — tower-host awx.production.com`
+
+## API
+This section offers a basic understanding of the REST API used by AWX and Ansible Tower
+- https://docs.ansible.com/ansible-tower/2.3.0/html/towerapi/intro.html
+REST APIs provide access to resources (data entities) via URI paths. You can visit the AWX REST API in a web browser at: http://<AWX Server IP>/api/ as shown below:
+  
+![](awx-api.png)
+
+As an example, the following curl command retrieves the list of AWX Job templates provisioned:
+```bash
+export CREDENTIAL='admin:password'
+# curl -s  -k  -u $CREDENTIAL "http://172.29.29.98/api/v2/job_templates/" | jq '.results | .[] | .name '
+"IOS Change mgcp call agent"
+"Retrieve IOS Running Config to File"
+```
+Similarly, list the AWX inventories: 
+```bash
+# curl -s -k -u $CREDENTIAL http://172.29.29.98/api/v2/inventories/ | jq '.results | .[] | .name'
+# curl -s -k -u $CREDENTIAL http://172.29.29.98/api/v2/inventories/ | jq '.results | .[] | .name'
+
+"Customer 15 VGs"
+"Demo Inventory"
+```
+Creates a new user:
+curl -H "Content-type: application/json" -d "$(jo username=jbaltar2 first_name=Javier last_name=Baltar2 email=jbaltar@gmail.com password=dontshareit)" -u $CREDENTIAL http://172.29.29.98/api/v2/users/
+NOTE: "jo" is a utility to create JSON objets. 
 
 
 ## Notifications
