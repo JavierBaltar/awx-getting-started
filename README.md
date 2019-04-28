@@ -54,25 +54,24 @@ REST APIs provide access to resources (data entities) via URI paths. You can vis
   
 ![](awx-api.png)
 
-As an example, the following curl command retrieves the list of AWX Job templates provisioned:
+As an example, the following curl command retrieves the list of AWX Job templates provisioned
 ```bash
 export CREDENTIAL='admin:password'
-# curl -s  -k  -u $CREDENTIAL "http://172.29.29.98/api/v2/job_templates/" | jq '.results | .[] | .name '
+# curl -s  -k  -u $CREDENTIAL "http://AWX-IP/api/v2/job_templates/" | jq '.results | .[] | .name '
 "IOS Change mgcp call agent"
 "Retrieve IOS Running Config to File"
 ```
-Similarly, list the AWX inventories: 
+Similarly, list the AWX inventories 
 ```bash
-# curl -s -k -u $CREDENTIAL http://172.29.29.98/api/v2/inventories/ | jq '.results | .[] | .name'
-# curl -s -k -u $CREDENTIAL http://172.29.29.98/api/v2/inventories/ | jq '.results | .[] | .name'
+# curl -s -k -u $CREDENTIAL http://AWX-IP/api/v2/inventories/ | jq '.results | .[] | .name'
 
-"Customer 15 VGs"
-"Demo Inventory"
+"Customer Webservers"
+"Customer Databases"
 ```
-Creates a new user:
-curl -H "Content-type: application/json" -d "$(jo username=jbaltar2 first_name=Javier last_name=Baltar2 email=jbaltar@gmail.com password=dontshareit)" -u $CREDENTIAL http://172.29.29.98/api/v2/users/
-NOTE: "jo" is a utility to create JSON objets. 
-
+Create a new AWX user
+```bash
+curl -H "Content-type: application/json" -d "$(jo username=jbaltar first_name=Javier last_name=Baltar email=jbaltar@mydomain.com password=dontshareit)" -u $CREDENTIAL http://AWX-IP/api/v2/users/
+```
 
 ## Notifications
 AWX notifications provide a mechanism of signaling when AWX jobs succeed or fail. This can take the form of sending a message to a Slack channel, an email or sending an HTTP POST to another service to trigger other actions.
