@@ -3,12 +3,21 @@
   <a href="#Inventory">Inventory</a> •
   <a href="#Playbooks">Playbooks</a> •
   <a href="#Roles">Roles</a> •
-  <a href="#Templates">Roles</a> •
+  <a href="#Getting-Started">Getting Started</a> •
   <a href="#Notifications">Notifications</a> •
   <a href="#Docker-Security">Docker Security</a> •
   <a href="#related">Related</a> •
   <a href="#Authors">Authors</a>
 </p>
+
+## Getting Started
+To run an Ansible Playbook with AWX, you need to configure the following items
+- Credentials: User name/password or ssh key to connect to remote component
+- Project: It contains the Ansible playbook, config, roles, templates etc
+- Inventories : What servers the playbook will run against and connection specific configuration
+- Templates: Job template to associate all of the above and run the playbook
+- Launch Templates: Launching current project
+
 
 ## Notifications
 AWX notifications provide a mechanism of signaling when AWX jobs succeed or fail. This can take the form of sending a message to a Slack channel, an email or sending an HTTP POST to another service to trigger other actions.
