@@ -28,4 +28,8 @@ Once the reported is generated, you can follow the mentioned benchmark document 
 
 
 ## Related
+* [AWX](https://github.com/ansible/awx) - Configuration Management
+ 
 ## Authors
+* **Javier Baltar** - *Initial work* - [GitHub](https://github.com/JavierBaltar)
+
