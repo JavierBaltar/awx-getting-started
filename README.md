@@ -24,27 +24,27 @@ Tower-cli is a command line tool for Ansible AWX. It can also be used as a clien
 https://docs.ansible.com/ansible-tower/latest/html/towerapi/tower_cli.html 
 
 #### List users.
-`tower-cli user list
-Create a new user.
-# tower-cli user create --username=jbaltar --first-name=Javier --last-name=Baltar --email=javier.baltarbarrio@vodafone.com
+`tower-cli user list`
+#### Create a new user
+`tower-cli user create --username=jbaltar --first-name=Javier --last-name=Baltar --email=username@domain.com`
 
-Launch a job.
-# tower-cli job launch — job-template=id
+#### Launch a job
+tower-cli job launch — job-template=id
 
-Monitor a job.
-# tower-cli job monitor id
+#### Monitor a job
+`tower-cli job monitor id`
 
-Export all objects 
-# tower-cli receive — all
+#### Export all objects 
+`tower-cli receive — all`
 
-Export all objects and save to a file in json format
-#tower-cli receive — all — format json > awx.json
+#### Export all objects and save to a file in json format
+`tower-cli receive — all — format json > awx.json`
 
-Import from a JSON file named awx.json 
-#tower-cli send assets.json
+#### Import from a JSON file named awx.json 
+`tower-cli send assets.json`
 
-# Copy all assets from one instance to another
-tower-cli receive — tower-host awx.lab.com — all | tower-cli send — tower-host awx.production.com
+#### Copy all assets from one instance to another
+`tower-cli receive — tower-host awx.lab.com — all | tower-cli send — tower-host awx.production.com`
 
 
 ## Notifications
