@@ -49,21 +49,23 @@ Tower-cli is a command line tool for Ansible AWX. It can also be used as a clien
 
 ## API
 This section offers a basic understanding of the REST API used by AWX and Ansible Tower
+REST APIs provide access to resources (data entities) via URI paths. 
 - https://docs.ansible.com/ansible-tower/2.3.0/html/towerapi/intro.html
-REST APIs provide access to resources (data entities) via URI paths. You can visit the AWX REST API in a web browser at: http://<AWX Server IP>/api/ as shown below:
+
+You can visit the AWX REST API in a web browser at http://<AWX Server IP>/api/ as shown below:
   
 ![](awx-api.png)
 
 As an example, the following curl command retrieves the list of AWX Job templates provisioned
 ```bash
 export CREDENTIAL='admin:password'
-# curl -s  -k  -u $CREDENTIAL "http://AWX-IP/api/v2/job_templates/" | jq '.results | .[] | .name '
+curl -s  -k  -u $CREDENTIAL "http://AWX-IP/api/v2/job_templates/" | jq '.results | .[] | .name '
 "IOS Change mgcp call agent"
 "Retrieve IOS Running Config to File"
 ```
 Similarly, list the AWX inventories 
 ```bash
-# curl -s -k -u $CREDENTIAL http://AWX-IP/api/v2/inventories/ | jq '.results | .[] | .name'
+curl -s -k -u $CREDENTIAL http://AWX-IP/api/v2/inventories/ | jq '.results | .[] | .name'
 
 "Customer Webservers"
 "Customer Databases"
