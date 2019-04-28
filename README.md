@@ -21,15 +21,15 @@ To run an Ansible Playbook with AWX, you need to configure the following items
 
 ## Tower CLI
 Tower-cli is a command line tool for Ansible AWX. It can also be used as a client library for other python apps, or as a reference for others developing API interactions with Tower’s REST API.
-https://docs.ansible.com/ansible-tower/latest/html/towerapi/tower_cli.html 
+- https://docs.ansible.com/ansible-tower/latest/html/towerapi/tower_cli.html 
 
 #### List users.
 `tower-cli user list`
 #### Create a new user
-`tower-cli user create --username=jbaltar --first-name=Javier --last-name=Baltar --email=username@domain.com`
+`tower-cli user create --username=javierbaltar --first-name=Javier --last-name=Baltar --email=username@domain.com`
 
 #### Launch a job
-tower-cli job launch — job-template=id
+`tower-cli job launch — job-template=id`
 
 #### Monitor a job
 `tower-cli job monitor id`
