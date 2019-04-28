@@ -1,8 +1,5 @@
 # awx-getting-started
 <p align="center">
-  <a href="#Inventory">Inventory</a> •
-  <a href="#Playbooks">Playbooks</a> •
-  <a href="#Roles">Roles</a> •
   <a href="#Getting-Started">Getting Started</a> •
   <a href="#Tower-CLI">Tower CLI</a> •
   <a href="#API">API</a> •
@@ -89,8 +86,8 @@ In AWX the following notification types are supported:
 ![](awx-notifications.png)
 
 ## Docker Security
-Docker offers the Docker Bench for Security script (https://github.com/docker/docker-bench-security) , which checks a Docker configuration against the published hardening guide: CIS DOCKER 1.12.0 BENCHMARK V1.0.0 (link). 
-You can just download the script and run it straight from your host. Once you have run the script, you will be presented the output shown below:
+Docker offers the Docker Bench for Security script (https://github.com/docker/docker-bench-security) , which checks a Docker configuration against the published hardening guide: CIS DOCKER 1.12.0 BENCHMARK V1.0.0 
+You can just download the script and run it straight from your host. Once you have run the script, you will be presented the output shown below
 
 ![](dockerSecurity.gif)
 
