@@ -4,6 +4,7 @@
   <a href="#Playbooks">Playbooks</a> •
   <a href="#Roles">Roles</a> •
   <a href="#Getting-Started">Getting Started</a> •
+  <a href="#Tower-CLI">Tower CLI</a> •
   <a href="#Notifications">Notifications</a> •
   <a href="#Docker-Security">Docker Security</a> •
   <a href="#related">Related</a> •
@@ -17,6 +18,33 @@ To run an Ansible Playbook with AWX, you need to configure the following items
 - Inventories : What servers the playbook will run against and connection specific configuration
 - Templates: Job template to associate all of the above and run the playbook
 - Launch Templates: Launching current project
+
+## Tower CLI
+Tower-cli is a command line tool for Ansible AWX. It can also be used as a client library for other python apps, or as a reference for others developing API interactions with Tower’s REST API.
+https://docs.ansible.com/ansible-tower/latest/html/towerapi/tower_cli.html 
+
+#### List users.
+`tower-cli user list
+Create a new user.
+# tower-cli user create --username=jbaltar --first-name=Javier --last-name=Baltar --email=javier.baltarbarrio@vodafone.com
+
+Launch a job.
+# tower-cli job launch — job-template=id
+
+Monitor a job.
+# tower-cli job monitor id
+
+Export all objects 
+# tower-cli receive — all
+
+Export all objects and save to a file in json format
+#tower-cli receive — all — format json > awx.json
+
+Import from a JSON file named awx.json 
+#tower-cli send assets.json
+
+# Copy all assets from one instance to another
+tower-cli receive — tower-host awx.lab.com — all | tower-cli send — tower-host awx.production.com
 
 
 ## Notifications
