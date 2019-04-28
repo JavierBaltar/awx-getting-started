@@ -4,11 +4,24 @@
   <a href="#Playbooks">Playbooks</a> •
   <a href="#Roles">Roles</a> •
   <a href="#Templates">Roles</a> •
-  <a href="#Loops">Loops</a> •
+  <a href="#Notifications">Notifications</a> •
   <a href="#Docker-Security">Docker Security</a> •
   <a href="#related">Related</a> •
   <a href="#Authors">Authors</a>
 </p>
+
+## Notifications
+AWX notifications provide a mechanism of signaling when AWX jobs succeed or fail. This can take the form of sending a message to a Slack channel, an email or sending an HTTP POST to another service to trigger other actions.
+In AWX the following notification types are supported:
+- Email
+- Slack
+- Hipchat
+- Pagerduty
+- Twilio
+- IRC
+- Webhook (POST)
+
+![](awx-notifications.png)
 
 ## Docker Security
 Docker offers the Docker Bench for Security script (https://github.com/docker/docker-bench-security) , which checks a Docker configuration against the published hardening guide: CIS DOCKER 1.12.0 BENCHMARK V1.0.0 (link). 
