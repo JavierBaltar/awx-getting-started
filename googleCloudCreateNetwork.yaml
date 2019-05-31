@@ -1,6 +1,6 @@
 ---
 
-- name: Create Custom Network
+- name: Create Network
   gce_net:
     name: my-training-network
     mode: custom
